@@ -155,7 +155,8 @@ def login():
             flash(f"Error during login for {username}")
             return "An error occurred during login."
     return render_template("login.html")
-
+    
+# Secure Software Development
 @app.route("/dashboard")
 def dashboard():
     if "user_id" in session:
@@ -268,3 +269,4 @@ def delete_patient(patient_id):
 
 if __name__ == "__main__":
     app.run(debug=True)
+
