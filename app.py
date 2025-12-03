@@ -259,9 +259,9 @@ def add_patient():
     
     return render_template("add_patient.html", form=form)
 
-# ---------------------------------------------------------
-# VIEW ONLY PATIENTS ADDED BY LOGGED USER
-# ---------------------------------------------------------
+# -----------------------------------------------------------
+# VIEW ONLY PATIENTS ADDED BY LOGGED USER(Additional Feature)
+# -----------------------------------------------------------
 @app.route("/my_patients")
 def my_patients():
     if "user_id" not in session:
@@ -329,3 +329,4 @@ def delete_patient(patient_id):
 # ---------------------------------------------------------
 if __name__ == "__main__":
     app.run(debug=True)
+
