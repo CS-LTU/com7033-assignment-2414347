@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<style>
+    body {
+        background: #f5f7fa;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .register-card {
+        width: 380px;
+        padding: 25px;
+        border-radius: 10px;
+        background: white;
+        box-shadow: 0px 4px 18px rgba(0,0,0,0.1);
+    }
+    .register-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+</style>
+
+<div class="register-card">
+    <h3 class="register-title">Register</h3>
+
+    <form method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+        <div class="mb-3">
+            <input type="text" class="form-control" name="username" placeholder="Username" required>
+        </div>
+
+        <div class="mb-3">
+            <input type="password" class="form-control" name="password" placeholder="Password" required>
+        </div>
+
+        <button type="submit" class="btn btn-success w-100">Create Account</button>
+    </form>
+
+    <div class="text-center mt-3">
+        <a href="/login">Already have an account?</a>
+    </div>
+</div>
+{% endblock %}
